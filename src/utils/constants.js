@@ -1,0 +1,1 @@
+export const FLICKR_API = "https://www.flickr.com/services/rest/"
