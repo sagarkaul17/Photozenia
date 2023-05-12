@@ -48,7 +48,7 @@ const Images = () => {
     setLoading(true);
     fetchImages(method.current, page, searchText)
       .then((data) => {
-        setImages([...images, ...data]);
+        setImages((prevImages) => {return [...prevImages, ...data]});
       })
       .catch((err) => {
         setError(true);
