@@ -11,7 +11,7 @@ https://reactjs-assignment-ori.netlify.app/
 
 1. Default - By default, we show the images from
 https://www.flickr.com/services/api/flickr.photos.getRecent.html
-2. Search - A Search bar is placed in the header. When a user is typing, results are displayed from https://www.flickr.com/services/api/flickr.photos.search.html
+2. Search - A Search bar is placed in the header. When a user is typing, results are displayed from https://www.flickr.com/services/api/flickr.photos.search.html . I have used throttling of 500ms i.e. API will be called 500ms after user has stopped typing to reduce the number of network calls.
 3. Infinite Scroll - As you scroll down to the bottom of the page, more results are displayed if
 there are more results.
 4. Suggestions - Search queries are saved in the browser iteself (Local Storage) so that the next time
