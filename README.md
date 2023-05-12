@@ -4,6 +4,9 @@
 ## Live Demo:
 https://reactjs-assignment-ori.netlify.app/
 
+## Tech Stack Used:
+- ReactJS and Tailwind CSS
+
 ## Features:
 
 1. Default - By default, we show the images from
