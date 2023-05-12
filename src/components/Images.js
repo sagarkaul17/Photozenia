@@ -8,7 +8,6 @@ const Images = () => {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
   const [searchText, setSearchText] = useState('');
   const [searchQueries, setSearchQueries] = useState([]);
@@ -51,7 +50,7 @@ const Images = () => {
         setImages((prevImages) => {return [...prevImages, ...data]});
       })
       .catch((err) => {
-        setError(true);
+        console.log(err);
       })
       .finally(() => {
         setLoading(false);
@@ -91,9 +90,6 @@ const Images = () => {
     setSearchQueries(searchHistory);
   }, [])
 
-  if (images.length === 0 && error) {
-    return <h1>Some error occured!</h1>
-  }
   return (
     <>
       <header className='bg-black h-28 flex flex-col justify-center items-center'>
@@ -116,6 +112,7 @@ const Images = () => {
           })}
         </div>
         {loading && <Loader />}
+        {images.length === 0 && !loading && <h1 className='text-3xl text-center m-10'>No Images to Show. Please try again!</h1>}
         {selectedImage && <ImageModal imgSrc={selectedImage} closeModal={() => setSelectedImage('')} />}
       </main>
     </>
