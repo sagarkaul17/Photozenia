@@ -1,6 +1,10 @@
 
 # ReactJS Assignment
-## Features
+
+## Live Demo:
+https://reactjs-assignment-ori.netlify.app/
+
+## Features:
 
 1. Default - By default, we show the images from
 https://www.flickr.com/services/api/flickr.photos.getRecent.html
