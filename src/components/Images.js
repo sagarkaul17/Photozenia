@@ -57,6 +57,11 @@ const Images = () => {
       })
   }
 
+  const toggleModal = (imgSrc) => {
+    setSelectedImage(imgSrc);
+    imgSrc ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'visible';
+  }
+
   const clearLocalStorage = (e) => {
     e.stopPropagation();
     localStorage.removeItem('searchHistory');
@@ -108,12 +113,12 @@ const Images = () => {
         <div className='flex justify-center flex-wrap'>
           {images.map((image) => {
             let imgSrc = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}.jpg`;
-            return <img onClick={() => setSelectedImage(imgSrc)} className='cursor-pointer my-3 mx-4 w-64 h-48' key={image.id} src={imgSrc} alt='image' />
+            return <img onClick={() => toggleModal(imgSrc)} className='cursor-pointer my-3 mx-4 w-64 h-48' key={image.id} src={imgSrc} alt='image' />
           })}
         </div>
         {loading && <Loader />}
         {images.length === 0 && !loading && <h1 className='text-3xl text-center m-10'>No Images to Show. Please try again!</h1>}
-        {selectedImage && <ImageModal imgSrc={selectedImage} closeModal={() => setSelectedImage('')} />}
+        {selectedImage && <ImageModal imgSrc={selectedImage} closeModal={() => toggleModal('')} />}
       </main>
     </>
   )
