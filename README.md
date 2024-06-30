@@ -2,7 +2,7 @@
 # ReactJS Assignment
 
 ## Live Demo:
-https://reactjs-assignment-ori.netlify.app/
+https://photozenia.netlify.app/
 
 ## Tech Stack Used:
 - ReactJS and Tailwind CSS
